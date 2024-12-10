@@ -1,0 +1,64 @@
+/* src/Styles/Navbar.css */
+
+/* Navbar Styles */
+.navbar {
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Transparent background */
+    padding: 1px 0;
+    z-index: 1000; /* Ensure the navbar stays on top */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background */
+    color: black;
+  }
+  
+  /* .navbar:hover {
+    background-color: rgba(0, 0, 0, 0.7); }Darken the navbar when hovered */
+   
+  
+  .navbar-container {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0 20px;
+  }
+  
+  .nav-links a {
+    color: rgb(242, 6, 6);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #2f06f9; /* Change color on hover */
+    background-color: aliceblue;
+  }
+  
+  .nav-links a.active {
+    color: #5007ee; /* Active link color */
+  }
+  

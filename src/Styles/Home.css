@@ -1,0 +1,238 @@
+/* src/Styles/Home.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* src/Styles/Home.css */
+
+
+.outerdiv {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  padding-bottom: 100px; /* Space at the bottom */
+  background: linear-gradient(to right, 
+    #f8043d,        /* Left: Red */
+    #0e0e0e 50%,    /* Middle: Purple */
+    #0065fc);       /* Right: Blue */
+  color: white; /* Text color for better contrast on the background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Optional: For better readability, add a darker overlay */
+.outerdiv:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  border-radius: 10px;
+  z-index: -1; /* Ensures the overlay stays behind content */
+}
+
+
+/* src/Styles/Home.css */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #007bff;
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.profile-photo:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  border-color: #e60505; /* Change border color to red on hover */
+}
+
+.name {
+  margin: 10px 0 5px;
+  font-size: 24px;
+  color: #f9f5f5;
+}
+
+.description {
+  margin: 5px 0;
+  color: #ddd9d9;
+  font-size: 16px;
+}
+
+.innerdiv {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  margin-top: 50px; /* Enough space from the profile photo */
+  z-index: 1;
+}
+
+.left, .right {
+  flex: 1; /* Equal width for both columns */
+  padding: 10px;
+}
+
+.left {
+  border-right: 1px solid #ddd; /* Divider between left and right */
+}
+
+h4 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.skills {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 10px;
+}
+
+.skills h4 {
+  color: #007bff;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills li {
+  margin: 10px 0;
+  color: #555;
+}
+/* src/Styles/Home.css */
+
+.skills-section {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.skills-list {
+  margin-top: 20px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.skill-item strong {
+  color: #007bff; /* Blue color for the skill category */
+}
+/* src/Styles/Home.css */
+/* src/Styles/Home.css */
+/* src/Styles/Home.css */
+
+.skills-section {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effects */
+}
+
+.skills-section:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+}
+
+.skills-section h4 {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns layout */
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  background-color: #f9f9f9;
+  border: 2px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  border-color: #761402; /* Change border color to red on hover */
+}
+
+.skill-item strong {
+  color: #007bff; /* Blue color for the skill name */
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.skill-item p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+
+.home-page {
+  position: relative;
+  background-color: #0d1117; /* Dark theme for a Spider-Man vibe */
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+}
+.spiderman-corner {
+  position: absolute; /* Allows precise positioning within the container */
+  top: -57px; /* Distance from the top edge */
+  right: 10px; /* Distance from the right edge */
+  z-index: 1000; /* Ensures it stays above other elements */
+  animation: swing 1.5s ease-in-out infinite; /* Adds the swinging animation */
+}
+
+.spiderman-corner img {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  transform: rotate(180deg) scaleX(-1);
+   /* Upside-down hanging effect */
+   
+}
+
+.spiderman-corner img:hover {
+  transform: rotate(180deg) scaleX(1); /* Upside-down and facing right on hover */
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(180deg) translateY(-5px); /* Slight lift at start and end */
+  }
+  50% {
+    transform: rotate(180deg) translateY(5px); /* Slight drop in the middle */
+  }
+}
