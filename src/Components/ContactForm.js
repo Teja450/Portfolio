@@ -1,4 +1,3 @@
-// src/ContactForm.js
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import '../Styles/ContactForm.css';
@@ -9,6 +8,8 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(''); // State for handling error messages
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,26 +19,44 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Show a thank you alert
-    alert('Thank you for your message! We will get back to you soon.');
-    
-    // Clear the form after submission
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+    setErrorMessage(''); // Reset error message before submitting
+
+    try {
+      const response = await fetch('http://localhost:5000/sendContactForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message! We will get back to you soon.');
+      } else {
+        setErrorMessage('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      setErrorMessage('There was a problem with the network. Please try again.');
+    } finally {
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="contact">
-      <Navbar></Navbar>
+      <Navbar />
       <div className='form'>
         <h2>Contact Me</h2>
         <form onSubmit={handleSubmit} className="contact-form">
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
           <div className="form-group">
             <label htmlFor="name">Name:</label>
             <input
@@ -70,7 +89,9 @@ const ContactForm = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="submit-btn">Send Message</button>
+          <button type="submit" className="submit-btn" disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Send Message'}
+          </button>
         </form>
       </div>
     </section>

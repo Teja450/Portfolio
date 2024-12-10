@@ -62,3 +62,17 @@
     color: #5007ee; /* Active link color */
   }
   
+
+
+.navbar .resume-button button {
+  color: rgb(242, 6, 6);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar .resume-button button:hover {
+  color: #2f06f9; /* Change color on hover */
+    background-color: aliceblue;
+}
