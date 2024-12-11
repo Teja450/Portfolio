@@ -25,7 +25,7 @@ const ContactForm = () => {
     setErrorMessage(''); // Reset error message before submitting
 
     try {
-      const response = await fetch('http://localhost:5000/sendContactForm', {
+      const response = await fetch('https://portfolio-8q6g.onrender.com/sendContactForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

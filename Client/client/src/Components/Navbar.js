@@ -5,7 +5,7 @@ import '../Styles/Navbar.css'; // Import the CSS for styling
 
 const Navbar = () => {
   const handleDownload = () => {
-    window.location.href = 'http://localhost:5000/downloadResume';
+    window.location.href = 'https://portfolio-8q6g.onrender.com/downloadResume';
   };
   return (
     <nav className="navbar">
