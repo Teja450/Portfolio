@@ -1,0 +1,111 @@
+/* src/Styles/Projects.css */
+
+.projects {
+  padding: 50px;
+  background: linear-gradient(to right, 
+  #f8043d,        /* Left: Red */
+  #0e0e0e 50%,    /* Middle: Purple */
+  #0065fc);       /* Right: Blue */
+color: white; /* Text color for better contrast on the background */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  color: white;
+  text-align: center;
+  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.projects h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #ff6347; /* Bright color border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Slight lift effect */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: #ff6347; /* Change border color on hover */
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff6347; /* Decorative line */
+  border-radius: 10px 0 0 10px;
+}
+
+.project-card .learn-more {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-card .learn-more:hover {
+  color: #261aac;
+}
+
+
+
+
+
+.spiderman-corner {
+  position: absolute; /* Allows precise positioning within the container */
+  top: -57px; /* Distance from the top edge */
+  right: 10px; /* Distance from the right edge */
+  z-index: 1000; /* Ensures it stays above other elements */
+  animation: swing 1.5s ease-in-out infinite; /* Adds the swinging animation */
+}
+
+.spiderman-corner img {
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  transform: rotate(180deg) scaleX(-1);
+   /* Upside-down hanging effect */
+   
+}
+
+.spiderman-corner img:hover {
+  transform: rotate(180deg) scaleX(1); /* Upside-down and facing right on hover */
+}
+
+@keyframes swing {
+  0%,
+  100% {
+    transform: rotate(180deg) translateY(-5px); /* Slight lift at start and end */
+  }
+  50% {
+    transform: rotate(180deg) translateY(5px); /* Slight drop in the middle */
+  }
+}
