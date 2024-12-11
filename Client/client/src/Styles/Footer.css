@@ -1,0 +1,41 @@
+/* src/Footer.css */
+footer {
+  width: 100%; /* Ensures the footer spans the full width */
+  box-sizing: border-box; /* Includes padding and border in width calculations */
+  background-color: #0d1117; /* Match the page background color */
+  color: white; /* Footer text color */
+  padding: 20px; /* Adjust padding for consistent spacing */
+  text-align: center; /* Center-align the footer content */
+  position: relative; /* Avoid overlapping issues */
+}
+
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 10px;
+    padding-right: 30px;
+    
+  }
+  
+  .social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .social-icon:hover {
+    text-decoration: underline;
+  }
+  
