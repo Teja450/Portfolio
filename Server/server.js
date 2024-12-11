@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Enable CORS for all origins or specify one (React frontend at localhost:3000)
 app.use(cors({
-  origin: 'https://portfolio-8q6g.onrender.com', // Replace with your frontend's URL if different
+  origin: 'https://tejworksportfolio.netlify.app', // Replace with your frontend's URL if different
   methods: 'GET, POST',
   allowedHeaders: 'Content-Type'
 }));
