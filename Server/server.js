@@ -17,6 +17,19 @@ app.use(cors({
   allowedHeaders: 'Content-Type'
 }));
 
+app.use((req, res, next) => {
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+});
+
+app.use((req, res, next) => {
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+  next();
+});
+
+
 // Serve resume file from the public folder
 app.use('/resume', express.static(path.join(__dirname, 'public')));
 
