@@ -1,6 +1,5 @@
 /* src/ContactForm.css */
 .form {
-  
   max-width: 700px; /* Limit the width of the form */
   margin: 20px auto; /* Center the form */
   padding: 20px;
@@ -8,23 +7,18 @@
   border-radius: 10px;
   border: 2px solid rgba(255, 255, 255, 0.9); /* Border with 90% opacity */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-sizing: border-box; /* Ensures padding is included in the element’s total width and height */
+  width: 100%; /* Ensures the form is responsive */
 }
 
-
-
+/* Contact section background and layout */
 .contact {
-  
   padding: 50px;
- background: linear-gradient(to right, 
-    #f8043d,        /* Left: Red */
-    #0e0e0e 50%,    /* Middle: Purple */
-    #0065fc);       /* Right: Blue */
-  color: white; /* Text color for better contrast on the background */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  background: linear-gradient(to right, #f8043d, #0e0e0e 50%, #0065fc);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  color: white; /* Text color */
+  
   position: relative;
   overflow: hidden;
 }
@@ -43,6 +37,7 @@
   z-index: -1;
 }
 
+/* Heading styles */
 .contact h2 {
   font-size: 26px;
   margin-bottom: 40px;
@@ -50,9 +45,10 @@
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Form layout */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -60,8 +56,11 @@
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 15px; /* Added padding for better spacing */
+  box-sizing: border-box; /* Ensure the width is properly constrained */
 }
 
+/* Form group styling */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -71,32 +70,35 @@
 .form-group label {
   font-size: 16px;
   margin-bottom: 8px;
-  color: white; /* Label color */
+  color: white;
 }
 
 .form-group input,
 .form-group textarea {
   padding: 12px;
   font-size: 16px;
-  width: 100%;
+  width: 100%; /* Ensure the input fields fill the container */
+  box-sizing: border-box; /* Ensure the padding is included in the total width */
   margin-bottom: 20px;
   border: 1px solid #fff;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
   transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Focused input fields */
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #ff9a8b; /* Lighter red for focus */
+  border-color: #ff9a8b;
   box-shadow: 0 0 5px rgba(255, 154, 139, 0.5);
   outline: none;
 }
 
+/* Submit button styling */
 .submit-btn {
   padding: 12px 20px;
-  background-color: #c91f37; /* Spider-Man Red */
+  background-color: #c91f37;
   color: white;
   border: none;
   border-radius: 5px;
@@ -108,7 +110,7 @@
 }
 
 .submit-btn::before {
-  content: '🕷️'; /* Spider emoji to represent Spider-Man */
+  content: '🕷️'; /* Spider emoji */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -119,15 +121,72 @@
 }
 
 .submit-btn:hover {
-  background-color: #ff9a8b; /* Lighter red on hover */
-  transform: translateY(-2px); /* Button hover effect */
+  background-color: #ff9a8b;
+  transform: translateY(-2px);
 }
 
 .submit-btn:hover::before {
-  opacity: 1; /* Show the spider emoji when hovering */
+  opacity: 1;
 }
 
 .submit-btn:active {
-  background-color: #9a1a2a; /* Darker red on click */
-  transform: translateY(0); /* Reset after click */
+  background-color: #9a1a2a;
+  transform: translateY(0);
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff9a8b;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact {
+    padding: 30px;
+  }
+
+  .contact h2 {
+    font-size: 22px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    padding: 0 10px; /* Reduced padding */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px; /* Slightly reduced padding */
+    font-size: 14px; /* Reduced font size for better mobile fit */
+  }
+
+  .submit-btn {
+    font-size: 16px; /* Smaller font size for mobile */
+    padding: 10px 18px; /* Adjusted padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact h2 {
+    font-size: 20px;
+  }
+
+  .contact-form {
+    max-width: 100%;
+    padding: 0 5px; /* Reduced padding further for very small screens */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px; /* Further reduced padding for very small screens */
+    font-size: 14px; /* Adjust font size for tiny screens */
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px 16px; /* Further reduced padding */
+  }
 }

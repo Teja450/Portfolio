@@ -1,17 +1,13 @@
-/* src/Styles/Projects.css */
-
 .projects {
   padding: 50px;
   background: linear-gradient(to right, 
-  #f8043d,        /* Left: Red */
-  #0e0e0e 50%,    /* Middle: Purple */
-  #0065fc);       /* Right: Blue */
-color: white; /* Text color for better contrast on the background */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  color: white;
-  text-align: center;
-  
+    #f8043d,        /* Left: Red */
+    #0e0e0e 50%,    /* Middle: Purple */
+    #0065fc);       /* Right: Blue */
+  color: white; /* Text color for better contrast on the background */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative; /* Ensures absolute positioning of Spiderman image */
 }
 
 .projects h2 {
@@ -33,6 +29,7 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
+  overflow: hidden; /* Prevents content overflow */
 }
 
 .project-card h3 {
@@ -76,36 +73,66 @@ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   color: #261aac;
 }
 
-
-
-
-
+/* Spiderman Image Styling */
 .spiderman-corner {
-  position: absolute; /* Allows precise positioning within the container */
-  top: -57px; /* Distance from the top edge */
-  right: 10px; /* Distance from the right edge */
-  z-index: 1000; /* Ensures it stays above other elements */
-  animation: swing 1.5s ease-in-out infinite; /* Adds the swinging animation */
+  position: absolute;
+  top: -57px;
+  right: 10px;
+  z-index: 1000;
+  animation: swing 1.5s ease-in-out infinite;
 }
 
 .spiderman-corner img {
-  width: 150px; /* Adjust size as needed */
+  width: 150px;
   height: auto;
   transform: rotate(180deg) scaleX(-1);
-   /* Upside-down hanging effect */
-   
 }
 
 .spiderman-corner img:hover {
   transform: rotate(180deg) scaleX(1); /* Upside-down and facing right on hover */
 }
 
+/* Keyframes for Swinging Effect */
 @keyframes swing {
-  0%,
-  100% {
-    transform: rotate(180deg) translateY(-5px); /* Slight lift at start and end */
+  0%, 100% {
+    transform: rotate(180deg) translateY(-5px);
   }
   50% {
-    transform: rotate(180deg) translateY(5px); /* Slight drop in the middle */
+    transform: rotate(180deg) translateY(5px);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .projects {
+    padding: 20px;
+  }
+
+  .projects h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .project-card {
+    padding: 20px;
+    margin: 10px;
+    font-size: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 20px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .spiderman-corner {
+    top: -40px;
+    right: 10px;
+  }
+
+  .spiderman-corner img {
+    width: 120px;
   }
 }

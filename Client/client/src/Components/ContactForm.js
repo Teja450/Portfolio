@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import '../Styles/ContactForm.css';
+import spidey from '../SPIDERMAN.png';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -52,6 +53,9 @@ const ContactForm = () => {
 
   return (
     <section id="contact" className="contact">
+      <div className="spiderman-corner">
+        <img src={spidey} alt="Spider-Man Hanging" />
+      </div>
       <Navbar />
       <div className='form'>
         <h2>Contact Me</h2>

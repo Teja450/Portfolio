@@ -1,4 +1,3 @@
-// src/Projects.js
 import React from 'react';
 import '../Styles/Projects.css';
 import Navbar from './Navbar';
@@ -10,7 +9,7 @@ const Projects = () => {
       <div className="spiderman-corner">
         <img src={spidey} alt="Spider-Man Hanging" />
       </div>
-      <Navbar></Navbar>
+      <Navbar />
       <h2>My Projects</h2>
 
       <div className="project-card">
@@ -30,9 +29,7 @@ const Projects = () => {
       <div className="project-card">
         <h3>Project 3: Comprehensive Analysis of NYC Taxi Data Using Azure Databricks and Power BI</h3>
         <p>
-       
-Implemented a data pipeline using Azure Databricks to process NYC taxi datasets. Conducted data cleaning, exploratory analysis, and visualization using PySpark, SQL, and Power BI. Key insights included revenue, trip counts, distance covered, and fare trends. Stored processed data as structured tables in Databricks for seamless integration and reporting.
-
+          Implemented a data pipeline using Azure Databricks to process NYC taxi datasets. Conducted data cleaning, exploratory analysis, and visualization using PySpark, SQL, and Power BI. Key insights included revenue, trip counts, distance covered, and fare trends. Stored processed data as structured tables in Databricks for seamless integration and reporting.
         </p>
       </div>
 
