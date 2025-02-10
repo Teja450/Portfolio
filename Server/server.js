@@ -11,10 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Enable CORS for all origins or specify one (React frontend at localhost:3000)
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:3000'];
-  // : ['https://tejworksportfolio.netlify.app'];
+const allowedOrigins = [
+  'https://tejworksportfolio.netlify.app', // Your frontend URL
+  'http://localhost:3000' // For local testing
+];
 
 app.use(cors({
   origin: function (origin, callback) {
