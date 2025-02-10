@@ -21,7 +21,7 @@ const ContactForm = () => {
     setErrorMessage('');
     setSuccessMessage('');
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/sendContactForm`, {
+      const response = await fetch("https://portfolio-8q6g.onrender.com/sendContactForm", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors',
