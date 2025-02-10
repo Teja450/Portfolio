@@ -115,8 +115,9 @@ const Projects = () => {
       overview:
         "Project X is an upcoming innovative project that will redefine modern web solutions with advanced features and a sleek design. Stay tuned for more details as the project evolves and sets new standards in the industry. We promise to deliver an exceptional user experience and state-of-the-art functionality.",
       process: [],
-      features: []
+      features: [],
       // Optionally, include an image property if available.
+      image:"https://static.vecteezy.com/system/resources/previews/000/429/651/original/vector-coming-soon-message-illuminated-with-light-projector.jpg"
     }
   ];
 
