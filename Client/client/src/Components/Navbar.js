@@ -1,23 +1,85 @@
-// src/Navbar.js
-import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link from react-router-dom
-import '../Styles/Navbar.css'; // Import the CSS for styling
+// src/Components/Navbar.js
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import styles from '../Styles/Navbar.module.css';
 
 const Navbar = () => {
-  const handleDownload = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  // Function to view resume using an external link (opens in new tab)
+  const handleViewResume = () => {
+    window.open(
+      'https://drive.google.com/file/d/1vDI-kVUFcGt_u_CnG497N10OOSZPRa0F/view?usp=drive_link',
+      '_blank'
+    );
+    setIsOpen(false);
+  };
+
+  // Function to download resume (opens a download URL in new tab)
+  const handleDownloadResume = () => {
     window.location.href = 'https://portfolio-8q6g.onrender.com/downloadResume';
   };
+
+  const handleTextClick = () => {
+    navigate('/home');
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <ul className="nav-links">
-        <li><Link to="/Home">Home</Link></li> {/* Use Link instead of <a> */}
-          <li><Link to="/projects">Projects</Link></li> {/* Use Link instead of <a> */}
-          <li><Link to="/contact">Contact Me</Link></li> {/* Use Link instead of <a> */}
+    <nav className={styles.navbar}>
+      <div className={styles.navbarContainer}>
+        <div className={styles.logo} onClick={handleTextClick}>
+          SpiderDev
+        </div>
+        {/* Hamburger Toggle for Mobile */}
+        <div className={styles.hamburger} onClick={handleToggle}>
+          <div className={`${styles.bar} ${isOpen ? styles.barOpen : ''}`}></div>
+          <div className={`${styles.bar} ${isOpen ? styles.barOpen : ''}`}></div>
+          <div className={`${styles.bar} ${isOpen ? styles.barOpen : ''}`}></div>
+        </div>
+        {/* Navigation Links */}
+        <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
+          <li>
+            <Link to="/home" className={styles.link} onClick={handleLinkClick}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/projects" className={styles.link} onClick={handleLinkClick}>
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className={styles.link} onClick={handleLinkClick}>
+              Contact
+            </Link>
+          </li>
+          {/* Mobile View Resume Buttons */}
+          <li className={styles.mobileResume}>
+            <button onClick={() => { handleViewResume(); handleLinkClick(); }}>
+              View Resume
+            </button>
+          </li>
+          <li className={styles.mobileResume}>
+            <button onClick={() => { handleDownloadResume(); handleLinkClick(); }}>
+              Download Resume
+            </button>
+          </li>
         </ul>
-        <div className="resume-button">
-        <button onClick={handleDownload}>Download Resume</button> {/* Button added directly here */}
-      </div>
+        {/* Desktop View Resume Buttons */}
+        <div className={styles.resumeButton}>
+          <button onClick={handleViewResume}>View Resume</button>
+          <button onClick={handleDownloadResume}>Download Resume</button>
+        </div>
       </div>
     </nav>
   );

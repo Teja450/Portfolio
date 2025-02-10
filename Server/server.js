@@ -11,18 +11,34 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Enable CORS for all origins or specify one (React frontend at localhost:3000)
+const allowedOrigins = process.env.ALLOWED_ORIGINS 
+  ? process.env.ALLOWED_ORIGINS.split(',') 
+  : ['http://localhost:3000'];
+  // : ['https://tejworksportfolio.netlify.app'];
+
 app.use(cors({
-  origin: 'https://tejworksportfolio.netlify.app', // Replace with your frontend's URL if different
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin: ' + origin;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   methods: 'GET, POST',
   allowedHeaders: 'Content-Type'
 }));
 
+
 app.use((req, res, next) => {
-  if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+  // If the hostname is not localhost, enforce HTTPS redirection.
+  if (req.hostname !== 'localhost' && !req.secure && req.get('x-forwarded-proto') !== 'https') {
     return res.redirect('https://' + req.get('host') + req.url);
   }
   next();
 });
+
 
 app.use((req, res, next) => {
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');

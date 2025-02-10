@@ -1,0 +1,154 @@
+/* src/Styles/Projects.module.css */
+.projectsContainer {
+  position: relative;
+  background: #000;
+  padding: 120px 20px 80px;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+
+/* Spiderman corner (swinging animation) */
+.spidermanCorner {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  width: 120px;
+  animation: swing 2s ease-in-out infinite;
+  z-index: 10;
+}
+.spidermanCorner img {
+  width: 100%;
+  transform: rotate(0deg);
+  /* Increase transition duration and optionally add a delay */
+  transition: transform 0.5s ease 0.1s, animation-play-state 0.3s ease;
+}
+
+.spidermanCorner img:hover {
+  animation-play-state: paused;
+  transform: translateY(2px); /* A very subtle movement, optional */
+}
+
+@keyframes swing {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #e50914;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Projects Grid with alternating card layout for Desktop */
+.projectsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projectCard {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border: 2px solid #e50914;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(229, 9, 20, 0.6);
+}
+
+.leftCard {
+  flex-direction: row;
+}
+
+.rightCard {
+  flex-direction: row-reverse;
+}
+
+.projectImage {
+  width: 40%;
+  background-size: cover;
+  background-position: center;
+  min-height: 250px;
+}
+
+.projectInfo {
+  padding: 20px;
+  width: 60%;
+}
+
+.projectInfo h3 {
+  margin-top: 0;
+  color: #e50914;
+  font-size: 1.8rem;
+}
+
+.tech {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 5px 0 10px;
+}
+
+.shortDesc {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.learnMore {
+  color: #e50914;
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+/* Improved Mobile Layout */
+@media (max-width: 768px) {
+  .projectCard {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  .projectImage {
+    width: 100%;
+    height: 200px; /* Fixed height for mobile images */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #e50914;
+  }
+  .projectInfo {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  .projectInfo h3 {
+    font-size: 1.5rem;
+  }
+  .tech {
+    font-size: 0.85rem;
+  }
+  .shortDesc {
+    font-size: 0.95rem;
+  }
+  .learnMore {
+    font-size: 0.9rem;
+  }
+}

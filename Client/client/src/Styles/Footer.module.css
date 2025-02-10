@@ -1,0 +1,33 @@
+/* src/Styles/Footer.module.css */
+.footer {
+  background: #0d0d0d;
+  padding: 20px 10px;
+  color: #aaa;
+  text-align: center;
+  border-top: 2px solid #e50914;
+}
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.footerContent p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+.socialIcon {
+  text-decoration: none;
+  color: #e50914;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.socialIcon:hover {
+  color: #fff;
+}

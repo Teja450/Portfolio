@@ -1,0 +1,119 @@
+/* src/Styles/ContactForm.module.css */
+.contact {
+  position: relative;
+  background: #000;
+  padding: 100px 20px 80px;
+  color: #f0f0f0;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.spidermanCorner {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  width: 120px;
+  animation: swing 2s ease-in-out infinite;
+  z-index: 10;
+}
+.spidermanCorner img {
+  width: 100%;
+  transform: rotate(0deg);
+}
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(10deg) translateY(8px); }
+}
+.formContainer {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: 80px auto;
+  border-radius: 10px;
+  border: 2px solid #e50914;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.formGroup label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #e50914;
+}
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background: #222;
+  color: #f0f0f0;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.submitBtn {
+  padding: 12px 20px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.submitBtn:hover {
+  background: #b20710;
+  transform: translateY(-2px);
+}
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Existing styles ... */
+
+.errorMessage {
+  color: #ff6b6b;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* New Success Message Style */
+.successMessage {
+  color: #4caf50;               /* Green text for success */
+  background-color: #e8f5e9;      /* Light green background */
+  padding: 10px;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Rest of your CSS ... */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formContainer {
+    margin: 40px 10px;
+    padding: 30px 15px;
+  }
+  .formGroup input,
+  .formGroup textarea {
+    font-size: 0.95rem;
+  }
+  .submitBtn {
+    font-size: 1rem;
+  }
+}

@@ -1,52 +1,65 @@
 // src/Components/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import spidey from '../SPIDERMAN.png';
-import '../Styles/Home.css';
+import styles from '../Styles/Home.module.css';
 import Navbar from './Navbar';
 
-function Home() {
+const Home = () => {
   return (
-    <div className="outerdiv">
-      <div className="spiderman-corner">
-        <img src={spidey} alt="Spider-Man Hanging" />
+    <div className={styles.outerDiv}>
+      {/* Spiderman decorative image */}
+      <div className={styles.spidermanCorner}>
+        <img src={spidey} alt="Spider-Man Swinging" />
       </div>
-      <Navbar />
-      
-      <img src={logo} alt="Teja Kumar M" className="profile-photo" />
-      <h3 className="name">Teja Kumar M</h3>
-      <p className="description">
-        Hi! I'm Teja Kumar, a passionate developer exploring the world of React and Node.js. 
-        I enjoy creating web applications and learning new technologies.
-      </p>
 
-      <div className="innerdiv">
-        <div className="left">
-          <h4>About Me</h4>
+      <Navbar />
+
+      {/* Hero Section */}
+      <div className={styles.hero}>
+        <img src={logo} alt="Teja Kumar M" className={styles.profilePhoto} />
+        <h1 className={styles.name}>Teja Kumar M</h1>
+        <p className={styles.description}>
+        Hi! I'm Teja Kumar, a passionate developer with a Spidey sense for innovation. I build dynamic web applications using React, Node.js, and cutting‑edge technology, and I'm equally enthusiastic about data engineering—transforming complex data into actionable insights to drive smarter decisions.
+        </p>
+        <Link to="/contact" className={styles.ctaButton}>
+          Get in Touch
+        </Link>
+      </div>
+
+      {/* About Section */}
+      <div className={styles.innerDiv}>
+        <div className={styles.left}>
+          <h2>About Me</h2>
           <p>
-            A dynamic and resourceful engineering graduate eager to contribute to innovative projects across diverse domains. Passionate about leveraging technical expertise, adaptability, and a commitment to excellence to drive meaningful results and support organizational growth.
+            A dynamic engineering graduate eager to contribute to innovative projects across diverse domains. I thrive on creative problem solving and craft web experiences that are as agile as your friendly neighborhood Spider‑Man!
           </p>
         </div>
-        <div className="right">
-          <h4>Contact Info</h4>
+        <div className={styles.right}>
+          <h2>Contact Info</h2>
           <p>Email: tejakumarm456@gmail.com</p>
+          <p></p>
         </div>
       </div>
 
-      <div className="skills-section">
-        <h4>Skills</h4>
-        <div className="skills-list">
+      {/* Skills Section */}
+      <div className={styles.skillsSection}>
+        <h2>Skills</h2>
+        <div className={styles.skillsList}>
           {[
-            { title: "HTML/CSS", description: "Experienced in building responsive, accessible websites using HTML5 and CSS3." },
-            { title: "JavaScript", description: "Proficient in JavaScript for developing interactive web applications." },
-            { title: "React", description: "Experience with React for building dynamic user interfaces." },
-            { title: "Spring Boot", description: "Basic understanding of Spring Boot framework for backend development." },
-            { title: "Java", description: "Proficient in Java with a focus on object-oriented principles." },
-            { title: "Python", description: "Skilled in Python for data analysis using Pandas and NumPy." },
-            { title: "SQL", description: "Experienced in working with relational databases." },
+            { title: "HTML/CSS", description: "Building responsive, accessible websites" },
+            { title: "JavaScript", description: "Crafting interactive web experiences" },
+            { title: "React", description: "Designing component‑driven UIs" },
+            { title: "Spring Boot", description: "Developing robust backend solutions" },
+            { title: "Java", description: "Implementing object‑oriented principles" },
+            { title: "Python", description: "Data analysis & scripting" },
+            { title: "SQL", description: "Managing relational databases" },
+            { title: "Node.js", description: "Managing Backend and Api Endpoint" },
+            { title: "PySpark", description: "Cleaning and Analysing Data " },
           ].map((skill, index) => (
-            <div className="skill-item" key={index}>
-              <strong>{skill.title}:</strong>
+            <div className={styles.skillItem} key={index}>
+              <strong>{skill.title}</strong>
               <p>{skill.description}</p>
             </div>
           ))}
@@ -54,6 +67,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

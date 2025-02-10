@@ -1,0 +1,168 @@
+/* src/Styles/Navbar.module.css */
+
+/* Global Styles */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.navbarContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #e50914;
+  text-transform: uppercase;
+}
+
+/* Desktop Navigation Links */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #e50914;
+}
+
+/* Desktop Resume Button */
+.resumeButton {
+  display: flex;
+  gap: 10px;
+}
+
+.resumeButton button {
+  background-color: transparent;
+  border: 2px solid #e50914;
+  color: #fff;
+  padding: 6px 16px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.resumeButton button:hover {
+  background-color: #e50914;
+  transform: scale(1.05);
+}
+
+/* Hide mobile resume buttons on desktop */
+.mobileResume {
+  display: none;
+}
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+/* Optional: Change bar color when menu is open */
+.barOpen {
+  background-color: #e50914;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbarContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide desktop navLinks on mobile, and position them as a vertical menu */
+  .navLinks {
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    padding: 20px 0;
+    z-index: 99;
+  }
+
+  /* When menu is open, display the navLinks */
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navLinks li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Hide desktop resume button on mobile */
+  .resumeButton {
+    display: none;
+  }
+
+  /* Show mobile resume buttons on mobile */
+  .mobileResume {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .mobileResume button {
+    width: 80%;
+    margin: 5px auto;
+    background-color: transparent;
+    border: 2px solid #e50914;
+    color: #fff;
+    padding: 6px 16px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .mobileResume button:hover {
+    background-color: #e50914;
+    transform: scale(1.05);
+  }
+}
+
+
