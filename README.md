@@ -1,6 +1,7 @@
 # SpiderDev Portfolio  
 
-Check out my [Portfolio Website]([https://your-portfolio-url.com](https://tejworksportfolio.netlify.app).
+Check out my [Portfolio Website](https://tejworksportfolio.netlify.app).
+
 
 Welcome to my personal portfolio! I'm **Teja Kumar**, a passionate developer with a Spidey sense for innovation. I build dynamic web applications using React, Node.js, and cutting‑edge technology—and I have a strong interest in data engineering, transforming complex data into actionable insights.
 
@@ -49,7 +50,7 @@ This repository houses my personal portfolio website—a comprehensive showcase 
 
 ## Usage
 
--- **Navigate through the website using the top menu.
--- **Click on project cards to open detailed modals.
--- **Use the "View Resume" or "Download Resume" buttons to access my resume.
--- **On mobile, tap the hamburger icon to reveal the navigation and resume options.
+**Navigate through the website using the top menu.
+**Click on project cards to open detailed modals.
+**Use the "View Resume" or "Download Resume" buttons to access my resume.
+**On mobile, tap the hamburger icon to reveal the navigation and resume options.
