@@ -50,7 +50,10 @@ This repository houses my personal portfolio website—a comprehensive showcase 
 
 ## Usage
 
-**Navigate through the website using the top menu.
-**Click on project cards to open detailed modals.
-**Use the "View Resume" or "Download Resume" buttons to access my resume.
-**On mobile, tap the hamburger icon to reveal the navigation and resume options.
+- **Navigate:** Use the top menu to move between pages.
+- **Projects:** Click on any project card to open a detailed modal with more information.
+- **Resume:** 
+  - On desktop, use the **"View Resume"** or **"Download Resume"** buttons to access your resume.
+  - On mobile, tap the hamburger icon to reveal the navigation menu, which includes options for viewing or downloading your resume.
+- **Interactivity:** Enjoy smooth animations and responsive design for an optimal browsing experience.
+
