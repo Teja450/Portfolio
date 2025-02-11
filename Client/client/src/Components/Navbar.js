@@ -30,6 +30,7 @@ const Navbar = () => {
       'https://drive.google.com/file/d/1vDI-kVUFcGt_u_CnG497N10OOSZPRa0F/view?usp=drive_link',
       '_blank'
     );
+    setIsOpen(false);
   };
 
   const handleTextClick = () => {
