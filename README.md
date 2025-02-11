@@ -3,7 +3,7 @@
 Check out my [Portfolio Website](https://tejworksportfolio.netlify.app).
 
 
-Welcome to my personal portfolio! I'm **Teja Kumar**, a passionate developer with a Spidey sense for innovation. I build dynamic web applications using React, Node.js, and cutting‑edge technology—and I have a strong interest in data engineering, transforming complex data into actionable insights.
+Welcome to my personal portfolio! I'm **Teja Kumar**, a passionate developer with a Spidey sense for innovation. I build dynamic web applications using React, Node.js, and cutting‑edge technology—and I have a strong interest in Data Engineering and Full Stack Web development.
 
 ## Table of Contents
 
