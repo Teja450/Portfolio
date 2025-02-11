@@ -37,8 +37,8 @@ This repository houses my personal portfolio website—a comprehensive showcase 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-   cd YOUR_REPOSITORY
+   git clone https://github.com/Teja450/Portfolio.git
+   cd Portfolio
    
 2. **Install dependencies:
 
